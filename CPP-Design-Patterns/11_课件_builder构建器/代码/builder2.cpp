@@ -1,8 +1,8 @@
-
+//改进
 class House{
     //....
 };
-
+//抽象基类
 class HouseBuilder {
 public:
     House* GetResult(){
@@ -23,7 +23,7 @@ protected:
 class StoneHouse: public House{
     
 };
-
+//具体化基类
 class StoneHouseBuilder: public HouseBuilder{
 protected:
     

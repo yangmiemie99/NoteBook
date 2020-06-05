@@ -67,6 +67,7 @@ class OracleDataReader: public IDataReader{
 
 
 class EmployeeDAO{
+    //三个对象必须是同系列的，关联性强
     IDBConnectionFactory* dbConnectionFactory;
     IDBCommandFactory* dbCommandFactory;
     IDataReaderFactory* dataReaderFactory;

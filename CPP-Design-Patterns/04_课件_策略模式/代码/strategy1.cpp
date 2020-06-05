@@ -2,7 +2,7 @@ enum TaxBase {
 	CN_Tax,
 	US_Tax,
 	DE_Tax,
-	FR_Tax       //更改
+	FR_Tax       //更改(违反了开放封闭原则)
 };
 
 class SalesOrder{

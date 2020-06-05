@@ -53,7 +53,7 @@ public:
 };
 
 //扩展操作
-
+//写一个中间类
 DecoratorStream: public Stream{
 protected:
     Stream* stream;//...

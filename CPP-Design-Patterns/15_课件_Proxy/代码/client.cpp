@@ -18,6 +18,7 @@ class ClientApp{
 public:
     
     ClientApp(){
+        //客户程序中可能由于安全原因，性能原因等等，拿不到这个RealSubject
         subject=new RealSubject();
     }
     

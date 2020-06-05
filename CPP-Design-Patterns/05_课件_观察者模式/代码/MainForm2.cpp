@@ -1,9 +1,10 @@
+//观察者1
 class MainForm : public Form, public IProgress
 {
 	TextBox* txtFilePath;
 	TextBox* txtFileNumber;
 
-	ProgressBar* progressBar;
+	ProgressBar* progressBar; //更改，加进度条展示
 
 public:
 	void Button1_Click(){
@@ -14,7 +15,7 @@ public:
 		ConsoleNotifier cn;
 
 		FileSplitter splitter(filePath, number);
-
+		// 自己决定订阅通知
 		splitter.addIProgress(this); //订阅通知
 		splitter.addIProgress(&cn)； //订阅通知
 
@@ -28,7 +29,7 @@ public:
 		progressBar->setValue(value);
 	}
 };
-
+//观察者2
 class ConsoleNotifier : public IProgress {
 public:
 	virtual void DoProgress(float value){

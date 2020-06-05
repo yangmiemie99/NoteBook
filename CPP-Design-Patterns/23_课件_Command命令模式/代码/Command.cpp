@@ -12,6 +12,7 @@ public:
 
 class ConcreteCommand1 : public Command
 {
+	//额外的状态信息
     string arg;
 public:
     ConcreteCommand1(const string & a) : arg(a) {}

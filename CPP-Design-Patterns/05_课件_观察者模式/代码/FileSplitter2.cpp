@@ -1,4 +1,4 @@
-class IProgress{
+class IProgress{ //通知，相当于observer
 public:
 	virtual void DoProgress(float value)=0;
 	virtual ~IProgress(){}
@@ -9,7 +9,7 @@ class FileSplitter
 {
 	string m_filePath;
 	int m_fileNumber;
-
+	//ProgressBar* m_progressBar; //具体通知控件
 	List<IProgress*>  m_iprogressList; // 抽象通知机制，支持多个观察者
 	
 public:
@@ -35,7 +35,7 @@ public:
 
 	}
 
-
+//稳定不变
 	void addIProgress(IProgress* iprogress){
 		m_iprogressList.push_back(iprogress);
 	}
@@ -50,7 +50,7 @@ protected:
 		
 		List<IProgress*>::iterator itor=m_iprogressList.begin();
 
-		while (itor != m_iprogressList.end() )
+		while (itor != m_iprogressList.end() ){
 			(*itor)->DoProgress(value); //更新进度条
 			itor++;
 		}

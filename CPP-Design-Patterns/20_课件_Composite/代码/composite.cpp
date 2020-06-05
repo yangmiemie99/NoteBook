@@ -16,6 +16,7 @@ public:
 class Composite : public Component{
     
     string name;
+	// 可能指向Component或者leaf
     list<Component*> elements;
 public:
     Composite(const string & s) : name(s) {}
@@ -76,7 +77,7 @@ int main()
     root.add(&treeNode3);
     treeNode3.add(&treeNode4);
     treeNode4.add(&leaf2);
-    
+    //一致性
     process(root);
     process(leaf2);
     process(treeNode3);

@@ -57,7 +57,7 @@ public:
     virtual char Read(int number){
        
         //额外的加密操作...
-        FileStream::Read(number);//读文件流
+        FileStream::Read(number);//读文件流，静态特质
         
     }
     virtual void Seek(int position){

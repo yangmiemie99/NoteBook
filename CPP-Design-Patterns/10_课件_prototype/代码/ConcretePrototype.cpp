@@ -4,7 +4,7 @@
 class BinarySplitter : public ISplitter{
 public:
     virtual ISplitter* clone(){
-        return new BinarySplitter(*this);
+        return new BinarySplitter(*this);//拷贝构造自己
     }
 };
 

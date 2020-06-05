@@ -53,11 +53,11 @@ public:
 };
 
 //扩展操作
-
-
+// 三个子类变为一个子类，用组合代替继承
+//继承Stream为了接口的规范，定义了基类的接口规范
 class CryptoStream: public Stream {
     
-    Stream* stream;//...
+    Stream* stream;//编译时确定变为运行时确定
 
 public:
     CryptoStream(Stream* stm):stream(stm){
@@ -72,12 +72,12 @@ public:
     }
     virtual void Seek(int position){
         //额外的加密操作...
-        stream::Seek(position);//定位文件流
+        stream->Seek(position);//定位文件流
         //额外的加密操作...
     }
     virtual void Write(byte data){
         //额外的加密操作...
-        stream::Write(data);//写文件流
+        stream->Write(data);//写文件流
         //额外的加密操作...
     }
 };

@@ -39,7 +39,7 @@ public:
 
 //类适配器
 class Adapter: public ITarget,
-               protected OldClass{ //多继承
+               protected OldClass{ //多继承，把oldclass钉死了，紧耦合
                
                
 }
@@ -48,7 +48,7 @@ class Adapter: public ITarget,
 int main(){
     IAdaptee* pAdaptee=new OldClass();
     
-    
+    //一个旧的类，使用新接口
     ITarget* pTarget=new Adapter(pAdaptee);
     pTarget->process();
     

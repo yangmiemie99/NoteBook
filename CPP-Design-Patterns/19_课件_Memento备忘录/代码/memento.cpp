@@ -2,7 +2,7 @@
 class Memento
 {
     string state;
-    //..
+    //..很多状态
 public:
     Memento(const string & s) : state(s) {}
     string getState() const { return state; }
@@ -14,11 +14,11 @@ public:
 class Originator
 {
     string state;
-    //....
+    //..很多状态
 public:
     Originator() {}
     Memento createMomento() {
-        Memento m(state);
+        Memento m(state); //具体实现可能非常复杂
         return m;
     }
     void setMomento(const Memento & m) {

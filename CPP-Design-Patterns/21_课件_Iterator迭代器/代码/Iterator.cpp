@@ -47,7 +47,7 @@ void MyAlgorithm()
     MyCollection<int> mc;
     
     Iterator<int> iter= mc.GetIterator();
-    
+    //性能不好，虚函数调用有成本，现在多使用泛型编程迭代器
     for (iter.first(); !iter.isDone(); iter.next()){
         cout << iter.current() << endl;
     }
